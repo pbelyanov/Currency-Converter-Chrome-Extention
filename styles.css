@@ -1,0 +1,18 @@
+button {
+    background-color: rgb(70, 70, 238);
+    color: white;
+    border-radius: 10%;
+    border: none;
+}
+
+#result {
+    color: rgb(70, 70, 238);
+}
+
+#currencies {
+    border-radius: 10%;
+}
+
+a:nth-child(2) {
+    margin-left: 150px;
+}

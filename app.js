@@ -62,6 +62,6 @@ async function calculateRate() {
     });
 
 
-    document.getElementById('result').value = result;
+    document.getElementById('result').value = Number(result).toFixed(2);
 
 };
