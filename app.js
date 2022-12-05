@@ -1,22 +1,13 @@
-async function getRate(from, to, amount) {
-    const response = await fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`, {
-        method: 'GET',
-        headers: {
-            'apikey': 'ugKDa0ZpOXEe75Y5gTE04j0Pyh3jJNR8'
-        },
-    })
+async function getRate(from, to) {
+    const response = await fetch(`https://api.exchangerate.host/convert?from=${from}&to=${to}`)
     const data = await response.json();
     return data.result
 }
 
 async function getAllCurrenices(event) {
-    const response = await fetch(`https://api.apilayer.com/exchangerates_data/symbols`, {
-        method: 'GET',
-        headers: {
-            'apikey': 'ugKDa0ZpOXEe75Y5gTE04j0Pyh3jJNR8'
-        },
-    })
+    const response = await fetch(`https://api.exchangerate.host/symbols`)
     const data = await response.json();
+    console.log(data)
 
     let targetFrom = document.getElementById('from');
     let targetTo = document.getElementById('to');
@@ -26,10 +17,10 @@ async function getAllCurrenices(event) {
     for (let row in symbols) {
         let fromElement = document.createElement('option');
         fromElement.setAttribute('value', row);
-        fromElement.innerHTML = `${row} - ${symbols[row]}`;
+        fromElement.innerHTML = `${row} - ${symbols[row].description}`;
         let toElement = document.createElement('option');
         toElement.setAttribute('value', row);
-        toElement.innerHTML = `${row} - ${symbols[row]}`;
+        toElement.innerHTML = `${row} - ${symbols[row].description}`;
         targetFrom.appendChild(fromElement);
         targetTo.appendChild(toElement);
     }
@@ -52,15 +43,10 @@ async function calculateRate() {
     const amount = document.getElementById('amount').value;
 
 
-    const result = await getRate(from, to, amount);
+    const rate = await getRate(from, to);
+    console.log(rate)
 
-    const response = await fetch(`https://api.apilayer.com/exchangerates_data/symbols`, {
-        method: 'GET',
-        headers: {
-            'apikey': 'ugKDa0ZpOXEe75Y5gTE04j0Pyh3jJNR8'
-        },
-    });
-
+    const result = Number(amount) * Number(rate);
 
     document.getElementById('result').value = Number(result).toFixed(2);
 
