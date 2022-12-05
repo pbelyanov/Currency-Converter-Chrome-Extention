@@ -1,6 +1,10 @@
 {
     "name": "Simple Forex Converter",
     "version": "1.0.0",
+    "icons": {
+        "16": "icons8-forex-16.png",
+        "48": "icons8-forex-48.png"
+      },
     "description": "convert between different currencies easily",
     "manifest_version": 3,
     "author": "Petar Belyanov",
