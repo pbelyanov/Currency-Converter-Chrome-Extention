@@ -1,0 +1,11 @@
+{
+    "name": "Simple Forex Converter",
+    "version": "1.0.0",
+    "description": "convert between different currencies easily",
+    "manifest_version": 3,
+    "author": "Petar Belyanov",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Forex Converter"
+    }
+}
