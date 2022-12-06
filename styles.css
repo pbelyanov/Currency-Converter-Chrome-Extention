@@ -1,8 +1,10 @@
 button {
     background-color: rgb(70, 70, 238);
     color: white;
-    border-radius: 10%;
+    border-radius: 5%;
     border: none;
+    margin-bottom: 10px;
+    margin-left: 159.5px
 }
 
 #result {
@@ -15,4 +17,26 @@ button {
 
 a:nth-child(2) {
     margin-left: 150px;
+}
+
+input {
+    border: none;
+}
+
+select {
+    border: none;
+
+}
+
+#calc-table {
+    margin: 10px;
+}
+
+img {
+    width: 405px;
+}
+
+#banner {
+    width: 405px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
