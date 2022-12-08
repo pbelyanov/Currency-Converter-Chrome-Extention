@@ -25,6 +25,11 @@ input {
     border: none;
 }
 
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 select {
     border: none;
     font-family: Prata;

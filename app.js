@@ -7,7 +7,6 @@ async function getRate(from, to) {
 async function getAllCurrenices(event) {
     const response = await fetch(`https://api.exchangerate.host/symbols`)
     const data = await response.json();
-    console.log(data)
 
     let targetFrom = document.getElementById('from');
     let targetTo = document.getElementById('to');
